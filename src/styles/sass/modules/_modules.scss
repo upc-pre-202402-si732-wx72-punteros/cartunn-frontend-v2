@@ -1,0 +1,20 @@
+.c-input {
+    &__input {
+        border: solid var(--blue-color) 2px;
+        border-radius: 4px;
+        padding: 1em 2em;
+    }
+}
+
+.c-button {
+    color: white;
+    background-color: var(--blue-color);
+    border: solid var(--blue-color) 2px;
+    border-radius: 4px;
+
+    &:hover {
+        color: var(--blue-color);
+        background-color: white;
+        border: solid var(--blue-color) 2px;
+    }
+}
