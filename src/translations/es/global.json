@@ -25,5 +25,25 @@
         "name-placeholder": "Ingresar usuario",
         "password-placeholder": "Ingresar contraseña",
         "button": "Resetear tu contraseña"
+    },
+    "drawer": {
+        "title": "Panel de opciones",
+        "client": {
+            "products-list": "Lista de products",
+            "favorite-list": "Lista de favoritos",
+            "your-notifications": "Tus notifications",
+            "all-reports": "Todos los reportes",
+            "shopping-cart": "Carrito de compras"
+        },
+        "staff": {
+            "orders-list": "Lista de ordenes",
+            "upload-item": "Subir item",
+            "update-item": "Actualizar item",
+            "remove-item": "Eliminar item",
+            "manage-returns": "Manejo de reembolsos"
+        },
+        "configurations": "Configuraciones",
+        "help-center": "Centro de ayuda",
+        "logout": "Cerrar sesión"
     }
 }
