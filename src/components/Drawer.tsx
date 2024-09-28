@@ -32,12 +32,11 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
 
     return (
         <>
-            <section className="flex justify-between items-end px-16">
+            <section className="flex justify-between items-end px-16 pt-12">
                 <section className="flex items-end">
                     <Image
                         src={menuIcon}
                         alt="menu"
-                        className="ml-16 mt-12 mb-1"
                         ref={btnRef}
                         onClick={onToggle}
                     />

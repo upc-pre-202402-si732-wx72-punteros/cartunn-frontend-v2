@@ -17,7 +17,12 @@ const nextConfig = {
                 destination: '/resetPassword',
             }
         ];
-    }
+    },
+    images: {
+        formats: ['image/avif', 'image/webp'],
+        loader: 'default',
+        dangerouslyAllowSVG: true
+    },
 };
 
 export default nextConfig;
