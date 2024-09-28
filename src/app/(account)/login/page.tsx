@@ -23,22 +23,20 @@ const Login = () => {
                 <section className="flex flex-col mx-auto my-4">
                     <input
                         type="text"
-                        placeholder="Ingresar usuario"
+                        placeholder={t("login.user-placeholder")}
                         className="c-input__input"
                         onChange={(e) => { setUsername(e.target.value) }}
                     />
                     <input
                         type="password"
-                        placeholder="Ingresar contraseña"
+                        placeholder={t("login.password-placeholder")}
                         className="c-input__input mt-2"
                     />
                     <RadioGroup
                         onChange={setValue}
                         value={value}
                     >
-                        <Stack
-                            my={4}
-                        >
+                        <Stack my={4}>
                             <span>Loguearse como: </span>
                             <section className="flex">
                                 <Radio value="staff" mr={4}>Staff mecánico</Radio>
@@ -46,14 +44,24 @@ const Login = () => {
                             </section>
                         </Stack>
                     </RadioGroup>
+                    <span className="my-2 text-center">
+                        <Link href="/reset-password">
+                            <u>{t("login.forgot-password")}</u>
+                        </Link>
+                    </span>
                     <button
                         className="c-button py-4 font-semibold"
                         onClick={setRouterHandler}
                     >
-                        Ingresar
+                        {t("login.button")}
                     </button>
                 </section>
-                <span>¿No tienes cuenta? <Link href="/sign-up"><u>Crear cuenta</u></Link> </span>
+                <span className="flex justify-center">
+                    {t("login.do-you-already-have-an-account")}
+                    <Link href="/sign-up">
+                        <u>{t("login.sign-up")}</u>
+                    </Link>
+                </span>
             </section>
         </section>
     );

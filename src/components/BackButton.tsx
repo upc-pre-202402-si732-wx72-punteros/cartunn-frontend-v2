@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import Image from "next/image";
 import arrowLeftIcon from "@/assets/icons/arrow-left-2.svg";
@@ -7,10 +8,12 @@ type BackButtonProps = {
 }
 
 const BackButton = (props: BackButtonProps) => {
+    const { t } = useTranslation("global");
+
     return (
         <Link href={props.route} className="flex">
             <Image src={arrowLeftIcon} alt="arrow icon" className="mr-2" />
-            <span>Volver</span>
+            <span>{t("back-button")}</span>
         </Link>
     );
 };
