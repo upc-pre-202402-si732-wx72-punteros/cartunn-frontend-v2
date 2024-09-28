@@ -1,14 +1,16 @@
 "use client"
+import { useState } from "react";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
 
 import EeuuFlag from "@/assets/images/eeuu-flag.webp";
 import MexicoFlag from "@/assets/images/mexico-flag.webp";
-import language from "@/assets/icons/language-square.svg"
+import languages from "@/assets/icons/language-square.svg"
 
 const LanguageDropdown = () => {
     const { i18n } = useTranslation("global");
+    const [language, setLanguage] = useState("English");
 
     const handleChangeLangugage = (lang: string) => {
         i18n.changeLanguage(lang);
@@ -18,8 +20,8 @@ const LanguageDropdown = () => {
         <Menu isLazy>
             <MenuButton>
                 <section className="flex">
-                    <Image src={language} alt="language" className="mr-2" />
-                    Language
+                    <Image src={languages} alt="languages"></Image>
+                    <span className="ml-2">Language: {language}</span>
                 </section>
             </MenuButton>
             <MenuList>
@@ -27,7 +29,10 @@ const LanguageDropdown = () => {
                     px={6}
                     py={3}
                     _hover={{ bg: "gray.50" }}
-                    onClick={ () => {handleChangeLangugage("en")} }
+                    onClick={ () => {
+                        handleChangeLangugage("en");
+                        setLanguage("English");
+                    }}
                 >
                     <Image
                         src={ EeuuFlag }
@@ -42,7 +47,10 @@ const LanguageDropdown = () => {
                     px={6}
                     py={3}
                     _hover={{ bg: "gray.50" }}
-                    onClick={ () => {handleChangeLangugage("es")} }
+                    onClick={ () => {
+                        handleChangeLangugage("es");
+                        setLanguage("Spanish");
+                    }}
                 >
                     <Image
                         src={ MexicoFlag }
