@@ -1,9 +1,11 @@
 "use client"
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import { Stack, Radio, RadioGroup } from "@chakra-ui/react";
 
 const Login = () => {
+    const { t } = useTranslation("global");
     const [value, setValue] = useState("staff");
     const [username, setUsername] = useState("");
 
@@ -17,7 +19,7 @@ const Login = () => {
     return (
         <section className="flex items-center w-1/4 h-screen m-auto px-16">
             <section className="w-full">
-                <h1 className="mt-8 text-4xl text-center font-extrabold tracking-tighter">INICIAR SESIÓN</h1>
+                <h1 className="mt-8 text-4xl text-center font-extrabold tracking-tighter">{t("login.title")}</h1>
                 <section className="flex flex-col mx-auto my-4">
                     <input
                         type="text"

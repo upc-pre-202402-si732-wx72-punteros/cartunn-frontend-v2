@@ -14,11 +14,11 @@ export default function WithNavbarLayout({
     const nameUser = cadena[2];
 
     return (
-        <ChakraProvider>
+        <>
             <DrawerDashboard typeUser={typeUser} name={nameUser} />
             <main className="px-16 mt-4">
                 {children}
             </main>
-        </ChakraProvider>
+        </>
     );
 }

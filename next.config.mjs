@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    reactStrictMode: true,
+    transpilePackages: ['react-i18next'],
     async rewrites() {
         return [
             {
@@ -11,7 +13,7 @@ const nextConfig = {
                 destination: '/signup',
             }
         ];
-    },
+    }
 };
 
 export default nextConfig;
