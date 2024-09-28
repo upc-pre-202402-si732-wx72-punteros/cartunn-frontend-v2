@@ -1,17 +1,11 @@
 "use client"
-
-import {
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem
-} from "@chakra-ui/react";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-
 import Image from "next/image";
 
 import EeuuFlag from "@/assets/images/eeuu-flag.webp";
 import MexicoFlag from "@/assets/images/mexico-flag.webp";
+import language from "@/assets/icons/language-square.svg"
 
 const LanguageDropdown = () => {
     const { i18n } = useTranslation("global");
@@ -22,7 +16,12 @@ const LanguageDropdown = () => {
 
     return (
         <Menu isLazy>
-            <MenuButton>Language</MenuButton>
+            <MenuButton>
+                <section className="flex">
+                    <Image src={language} alt="language" className="mr-2" />
+                    Language
+                </section>
+            </MenuButton>
             <MenuList>
                 <MenuItem
                     px={6}
