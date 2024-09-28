@@ -4,6 +4,7 @@ import { Drawer, DrawerBody, DrawerHeader, DrawerFooter, DrawerOverlay, DrawerCo
 import { useRef } from "react";
 import Link from "next/link";
 
+import LanguageDropdown from "@/components/LanguageDropdown";
 import menuIcon from "@/assets/icons/menu-1.svg";
 
 type DrawerDashboardProps = {
@@ -17,16 +18,19 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
 
     return (
         <>
-            <div className="flex items-end">
-                <Image
-                    src={menuIcon}
-                    alt="Menu"
-                    className="ml-16 mt-12 mb-1"
-                    ref={btnRef}
-                    onClick={onToggle}
-                />
-                <span className="ml-4 text-2xl font-bold tracking-tighter">​​CARTUNN DASHBOARD / {props.typeUser} - {decodeURI(props.name)}</span>
-            </div>
+            <section className="flex justify-between items-end px-16">
+                <section className="flex items-end">
+                    <Image
+                        src={menuIcon}
+                        alt="Menu"
+                        className="ml-16 mt-12 mb-1"
+                        ref={btnRef}
+                        onClick={onToggle}
+                    />
+                    <span className="ml-4 text-2xl font-bold tracking-tighter">​​CARTUNN DASHBOARD / {props.typeUser} - {decodeURI(props.name)}</span>
+                </section>
+                <LanguageDropdown></LanguageDropdown>
+            </section>
             <Drawer
                 isOpen={isOpen}
                 placement="left"
