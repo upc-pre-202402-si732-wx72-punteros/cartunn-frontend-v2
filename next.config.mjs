@@ -11,6 +11,10 @@ const nextConfig = {
             {
                 source: '/sign-up',
                 destination: '/signup',
+            },
+            {
+                source: '/reset-password',
+                destination: '/resetPassword',
             }
         ];
     }

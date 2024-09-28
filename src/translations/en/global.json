@@ -1,5 +1,29 @@
 {
+    "back-button": "Back",
     "login": {
-        "title": "LOGIN"
+        "title": "LOGIN",
+        "user-placeholder": "Enter your username",
+        "password-placeholder": "Enter your password",
+        "forgot-password": "Have you forgot your password?",
+        "button": "Login",
+        "do-you-already-have-an-account": "Already have an account?",
+        "sign-up": "Sign up"
+    },
+    "sign-up": {
+        "title": "SIGN UP",
+        "name-placeholder": "Enter your username",
+        "password-placeholder": "Enter your password",
+        "sign-up-as": "Sign up as:",
+        "staff": "Mechanical staff",
+        "client": "Client",
+        "button": "Sign up",
+        "already-have-an-account": "Already have an account?",
+        "login": "Login"
+    },
+    "reset-password": {
+        "title": "RESET PASSWORD",
+        "name-placeholder": "Enter your username",
+        "password-placeholder": "Enter your password",
+        "button": "Reset your password"
     }
 }
