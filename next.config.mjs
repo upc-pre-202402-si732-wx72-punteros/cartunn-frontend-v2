@@ -4,30 +4,19 @@ const nextConfig = {
     transpilePackages: ['react-i18next'],
     async rewrites() {
         return [
-            {
-                source: '/',
-                destination: '/login',
-            },
-            {
-                source: '/sign-up',
-                destination: '/signup',
-            },
-            {
-                source: '/reset-password',
-                destination: '/resetPassword',
-            },
-            {
-                source: '/staff/upload-item',
-                destination: '/staff/uploadItem',
-            },
-            {
-                source: '/staff/update-item',
-                destination: '/staff/updateItem',
-            },
-            {
-                source: '/staff/remove-item',
-                destination: '/staff/removeItem',
-            }
+            // General routes
+            { source: '/', destination: '/login'},
+            { source: '/sign-up', destination: '/signup'},
+            { source: '/reset-password', destination: '/resetPassword' },
+            // client routes
+            { source: '/client/favorites-list', destination: '/client/favoritesList' },
+            { source: '/client/your-notifications', destination: '/client/yourNotifications' },
+            { source: '/client/all-reports', destination: '/client/allReports' },
+            { source: '/client/shopping-cart', destination: '/client/shoppingCart' },
+            // staff routes
+            { source: '/staff/upload-item', destination: '/staff/uploadItem' },
+            { source: '/staff/update-item', destination: '/staff/updateItem' },
+            { source: '/staff/remove-item', destination: '/staff/removeItem' }
         ];
     },
     images: {
