@@ -16,7 +16,8 @@ const nextConfig = {
             // staff routes
             { source: '/staff/upload-item', destination: '/staff/uploadItem' },
             { source: '/staff/update-item', destination: '/staff/updateItem' },
-            { source: '/staff/remove-item', destination: '/staff/removeItem' }
+            { source: '/staff/remove-item', destination: '/staff/removeItem' },
+            { source: '/staff/manage-returns', destination: '/staff/manageReturns' }
         ];
     },
     images: {
