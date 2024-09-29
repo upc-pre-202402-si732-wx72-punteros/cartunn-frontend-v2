@@ -37,6 +37,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                     <Image
                         src={menuIcon}
                         alt="menu"
+                        className="mb-1"
                         ref={btnRef}
                         onClick={onToggle}
                     />
@@ -78,7 +79,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 <Divider />
                                 <li className="my-5 px-4">
                                     <Link
-                                        href={`/${props.typeUser}/upload-item`}
+                                        href={`/${props.typeUser}/favorites-list`}
                                         onClick={onToggle}
                                         className="flex"
                                     >
@@ -93,7 +94,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 <Divider />
                                 <li className="my-5 px-4">
                                     <Link
-                                        href={`/${props.typeUser}/home`}
+                                        href={`/${props.typeUser}/your-notifications`}
                                         onClick={onToggle}
                                         className="flex"
                                     >
@@ -108,12 +109,12 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 <Divider />
                                 <li className="my-5 px-4">
                                     <Link
-                                        href={`/${props.typeUser}/home`}
+                                        href={`/${props.typeUser}/all-reports`}
                                         onClick={onToggle}
                                         className="flex"
                                     >
                                         <Image
-                                            src={reports}
+                                            src={manageReturns}
                                             alt="reports"
                                             className="mr-2"
                                         />
@@ -123,7 +124,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 <Divider />
                                 <li className="my-5 px-4">
                                     <Link
-                                        href={`/${props.typeUser}/home`}
+                                        href={`/${props.typeUser}/shopping-cart`}
                                         onClick={onToggle}
                                         className="flex"
                                     >
