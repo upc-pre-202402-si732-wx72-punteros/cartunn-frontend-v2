@@ -6,8 +6,8 @@ const AllReportsPage = () => {
     return (
         <article>
             <span className="text-2xl font-extrabold tracking-tighter">All reports</span>
-            <article>
-                <section className="flex flex-col px-6 py-4 border rounded-xl mt-4 w-1/5">
+            <article className="flex flex-wrap gap-4">
+                <section className="flex flex-col w-[24%] mt-4 px-6 py-4 border rounded-xl">
                     <h2 className="ml-2 text-xl font-extrabold tracking-tighter">Status report</h2>
                     <span className="my-2 italic">MG ZX Exclusice Black Premium 265l.</span>
                     <section className="flex justify-between">
