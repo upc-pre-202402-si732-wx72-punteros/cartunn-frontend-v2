@@ -42,7 +42,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                     />
                     <span className="ml-4 text-2xl font-extrabold tracking-tighter">​​CARTUNN DASHBOARD / {props.typeUser} - {decodeURI(props.name)}</span>
                 </section>
-                <LanguageDropdown></LanguageDropdown>
+                <LanguageDropdown />
             </section>
             <Drawer
                 isOpen={isOpen}
@@ -52,16 +52,16 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
             >
                 <DrawerOverlay />
                 <DrawerContent>
-                    <DrawerCloseButton />
                     <DrawerHeader>
-                        <h2 className="mt-8 text-xl text-center font-bold tracking-tighter">{t("drawer.title")}</h2>
+                        <h2 className="mt-8 text-2xl text-center font-bold tracking-tighter">{t("drawer.title")}</h2>
                     </DrawerHeader>
                     <DrawerBody>
                         <ul className="flex flex-col">
+                            <span className="mb-4 px-4 text-xl font-semibold tracking-tighter">PRINCIPAL</span>
                             { props.typeUser === "client" ? (
                                 <>
                                 <Divider />
-                                <li className="my-5">
+                                <li className="my-5 px-4">
                                     <Link
                                         href={`/${props.typeUser}/home`}
                                         onClick={onToggle}
@@ -76,7 +76,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     </Link>
                                 </li>
                                 <Divider />
-                                <li className="my-5">
+                                <li className="my-5 px-4">
                                     <Link
                                         href={`/${props.typeUser}/upload-item`}
                                         onClick={onToggle}
@@ -91,7 +91,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     </Link>
                                 </li>
                                 <Divider />
-                                <li className="my-5">
+                                <li className="my-5 px-4">
                                     <Link
                                         href={`/${props.typeUser}/home`}
                                         onClick={onToggle}
@@ -106,7 +106,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     </Link>
                                 </li>
                                 <Divider />
-                                <li className="my-5">
+                                <li className="my-5 px-4">
                                     <Link
                                         href={`/${props.typeUser}/home`}
                                         onClick={onToggle}
@@ -121,7 +121,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     </Link>
                                 </li>
                                 <Divider />
-                                <li className="my-5">
+                                <li className="my-5 px-4">
                                     <Link
                                         href={`/${props.typeUser}/home`}
                                         onClick={onToggle}
@@ -140,7 +140,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                             ): (
                                 <>
                                 <Divider />
-                                <li className="my-5">
+                                <li className="my-5 px-4">
                                     <Link
                                         href={`/${props.typeUser}/home`}
                                         onClick={onToggle}
@@ -155,7 +155,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     </Link>
                                 </li>
                                 <Divider />
-                                <li className="my-4">
+                                <li className="my-4 px-4">
                                     <Link
                                         href={`/${props.typeUser}/upload-item`}
                                         onClick={onToggle}
@@ -170,7 +170,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     </Link>
                                 </li>
                                 <Divider />
-                                <li className="my-4">
+                                <li className="my-4 px-4">
                                     <Link
                                         href={`/${props.typeUser}/update-item`}
                                         onClick={onToggle}
@@ -185,7 +185,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     </Link>
                                 </li>
                                 <Divider />
-                                <li className="my-4">
+                                <li className="my-4 px-4">
                                     <Link
                                         href={`/${props.typeUser}/remove-item`}
                                         onClick={onToggle}
@@ -200,7 +200,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     </Link>
                                 </li>
                                 <Divider />
-                                <li className="my-4">
+                                <li className="my-4 px-4">
                                     <Link
                                         href={`/${props.typeUser}/manage-returns`}
                                         onClick={onToggle}
@@ -217,7 +217,8 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 <Divider />
                                 </>
                             )}
-                            <li className="my-5">
+                            <span className="mt-6 mb-2 px-4 text-xl font-semibold tracking-tighter">Preferences</span>
+                            <li className="my-5 px-4">
                                 <Link
                                     href="/configurations"
                                     onClick={onToggle}
@@ -232,7 +233,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 </Link>
                             </li>
                             <Divider />
-                            <li className="my-5">
+                            <li className="my-5 px-4">
                                 <Link
                                     href="/help"
                                     onClick={onToggle}
@@ -250,7 +251,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                         </ul>
                     </DrawerBody>
                     <DrawerFooter>
-                        <section className="flex justify-self-start w-full my-5">
+                        <section className="flex justify-self-start w-full my-5 px-4">
                             <Link
                                 href="/login"
                                 onClick={onToggle}
