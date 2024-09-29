@@ -63,7 +63,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 <Divider />
                                 <li className="my-5">
                                     <Link
-                                        href={`/${props.typeUser}/${props.name}/home`}
+                                        href={`/${props.typeUser}/home`}
                                         onClick={onToggle}
                                         className="flex"
                                     >
@@ -78,7 +78,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 <Divider />
                                 <li className="my-5">
                                     <Link
-                                        href={`/${props.typeUser}/${props.name}/home`}
+                                        href={`/${props.typeUser}/upload-item`}
                                         onClick={onToggle}
                                         className="flex"
                                     >
@@ -93,7 +93,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 <Divider />
                                 <li className="my-5">
                                     <Link
-                                        href={`/${props.typeUser}/${props.name}/home`}
+                                        href={`/${props.typeUser}/home`}
                                         onClick={onToggle}
                                         className="flex"
                                     >
@@ -108,7 +108,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 <Divider />
                                 <li className="my-5">
                                     <Link
-                                        href={`/${props.typeUser}/${props.name}/home`}
+                                        href={`/${props.typeUser}/home`}
                                         onClick={onToggle}
                                         className="flex"
                                     >
@@ -123,7 +123,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 <Divider />
                                 <li className="my-5">
                                     <Link
-                                        href={`/${props.typeUser}/${props.name}/home`}
+                                        href={`/${props.typeUser}/home`}
                                         onClick={onToggle}
                                         className="flex"
                                     >
@@ -142,7 +142,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 <Divider />
                                 <li className="my-5">
                                     <Link
-                                        href={`/${props.typeUser}/${props.name}/home`}
+                                        href={`/${props.typeUser}/home`}
                                         onClick={onToggle}
                                         className="flex"
                                     >
@@ -157,7 +157,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 <Divider />
                                 <li className="my-4">
                                     <Link
-                                        href={`/${props.typeUser}/${props.name}/home`}
+                                        href={`/${props.typeUser}/upload-item`}
                                         onClick={onToggle}
                                         className="flex"
                                     >
@@ -172,7 +172,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 <Divider />
                                 <li className="my-4">
                                     <Link
-                                        href={`/${props.typeUser}/${props.name}/home`}
+                                        href={`/${props.typeUser}/update-item`}
                                         onClick={onToggle}
                                         className="flex"
                                     >
@@ -187,7 +187,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 <Divider />
                                 <li className="my-4">
                                     <Link
-                                        href={`/${props.typeUser}/${props.name}/home`}
+                                        href={`/${props.typeUser}/remove-item`}
                                         onClick={onToggle}
                                         className="flex"
                                     >
@@ -202,7 +202,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 <Divider />
                                 <li className="my-4">
                                     <Link
-                                        href={`/${props.typeUser}/${props.name}/home`}
+                                        href={`/${props.typeUser}/manage-returns`}
                                         onClick={onToggle}
                                         className="flex"
                                     >
@@ -219,7 +219,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                             )}
                             <li className="my-5">
                                 <Link
-                                    href={`/${props.typeUser}/${props.name}/home`}
+                                    href="/configurations"
                                     onClick={onToggle}
                                     className="flex"
                                 >
@@ -234,7 +234,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                             <Divider />
                             <li className="my-5">
                                 <Link
-                                    href={`/${props.typeUser}/${props.name}/home`}
+                                    href="/help"
                                     onClick={onToggle}
                                     className="flex"
                                 >
