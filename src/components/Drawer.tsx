@@ -286,7 +286,10 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                         <section className="flex justify-self-start w-full my-5 px-4">
                             <Link
                                 href="/login"
-                                onClick={onToggle}
+                                onClick={ () => {
+                                    onToggle();
+                                    localStorage.removeItem("token");
+                                }}
                                 className="flex"
                             >
                                 <Image

@@ -7,7 +7,7 @@ export default function AccountLayout({
 }>) {
     return (
         <>
-            <main className="px-16 mt-4">
+            <main>
                 {children}
             </main>
         </>
