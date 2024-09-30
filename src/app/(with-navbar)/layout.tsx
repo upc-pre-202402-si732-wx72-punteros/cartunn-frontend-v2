@@ -1,5 +1,4 @@
 "use client"
-import { ChakraProvider } from "@chakra-ui/react";
 import { usePathname } from "next/navigation";
 import DrawerDashboard from "@/components/Drawer";
 

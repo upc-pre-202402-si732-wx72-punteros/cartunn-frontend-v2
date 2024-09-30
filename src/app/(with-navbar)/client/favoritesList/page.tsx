@@ -5,9 +5,9 @@ import removeItem from "@/assets/icons/trash.svg";
 const FavoriteListPage = () => {
     return (
         <article>
-            <span className="text-2xl font-extrabold tracking-tighter">Orders list</span>
-            <article>
-                <section className="flex flex-col border rounded-xl mt-4 w-1/6">
+            <span className="text-2xl font-extrabold tracking-tighter">Favorites list</span>
+            <article className="flex flex-wrap gap-x-8">
+                <section className="flex flex-col mt-4 w-[15%] border rounded-xl">
                     <img
                         src="https://www.diariomotor.com/imagenes/2019/06/motor-v8-ford-mustang-shelby-gt500-0619-01-1280x854.webp"
                         alt="motor"

@@ -10,7 +10,6 @@ import menuIcon from "@/assets/icons/menu-1.svg";
 import productList from "@/assets/icons/document-text.svg";
 import favorites from "@/assets/icons/heart.svg";
 import notifications from "@/assets/icons/notification.svg"
-import reports from "@/assets/icons/document-text.svg";
 import shoppingCart from "@/assets/icons/shopping-cart.svg";
 import uploadItem from "@/assets/icons/additem.svg";
 import updateItem from "@/assets/icons/arrange-square-2.svg";
@@ -58,9 +57,9 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                     </DrawerHeader>
                     <DrawerBody>
                         <ul className="flex flex-col">
-                            <span className="mb-4 px-4 text-xl font-semibold tracking-tighter">PRINCIPAL</span>
                             { props.typeUser === "client" ? (
                                 <>
+                                <span className="mb-4 px-4 text-xl font-semibold tracking-tighter">PRINCIPAL</span>
                                 <Divider />
                                 <li className="my-5 px-4">
                                     <Link
@@ -137,9 +136,41 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     </Link>
                                 </li>
                                 <Divider />
+                                <span className="mt-6 mb-2 px-4 text-xl font-semibold tracking-tighter">Preferences</span>
+                                <li className="my-5 px-4">
+                                    <Link
+                                        href={`/${props.typeUser}/configurations`}
+                                        onClick={onToggle}
+                                        className="flex"
+                                    >
+                                        <Image
+                                            src={settings}
+                                            alt="settings"
+                                            className="mr-2"
+                                        />
+                                        {t("drawer.configurations")}
+                                    </Link>
+                                </li>
+                                <Divider />
+                                <li className="my-5 px-4">
+                                    <Link
+                                        href={`/${props.typeUser}/help`}
+                                        onClick={onToggle}
+                                        className="flex"
+                                    >
+                                        <Image
+                                            src={help}
+                                            alt="help"
+                                            className="mr-2"
+                                        />
+                                        {t("drawer.help-center")}
+                                    </Link>
+                                </li>
+                                <Divider />
                                 </>
                             ): (
                                 <>
+                                <span className="mb-4 px-4 text-xl font-semibold tracking-tighter">PRINCIPAL</span>
                                 <Divider />
                                 <li className="my-5 px-4">
                                     <Link
@@ -216,46 +247,49 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     </Link>
                                 </li>
                                 <Divider />
+                                <span className="mt-6 mb-2 px-4 text-xl font-semibold tracking-tighter">Preferences</span>
+                                <li className="my-5 px-4">
+                                    <Link
+                                        href={`/${props.typeUser}/configurations`}
+                                        onClick={onToggle}
+                                        className="flex"
+                                    >
+                                        <Image
+                                            src={settings}
+                                            alt="settings"
+                                            className="mr-2"
+                                        />
+                                        {t("drawer.configurations")}
+                                    </Link>
+                                </li>
+                                <Divider />
+                                <li className="my-5 px-4">
+                                    <Link
+                                        href={`/${props.typeUser}/help`}
+                                        onClick={onToggle}
+                                        className="flex"
+                                    >
+                                        <Image
+                                            src={help}
+                                            alt="help"
+                                            className="mr-2"
+                                        />
+                                        {t("drawer.help-center")}
+                                    </Link>
+                                </li>
+                                <Divider />
                                 </>
                             )}
-                            <span className="mt-6 mb-2 px-4 text-xl font-semibold tracking-tighter">Preferences</span>
-                            <li className="my-5 px-4">
-                                <Link
-                                    href="/configurations"
-                                    onClick={onToggle}
-                                    className="flex"
-                                >
-                                    <Image
-                                        src={settings}
-                                        alt="settings"
-                                        className="mr-2"
-                                    />
-                                    {t("drawer.configurations")}
-                                </Link>
-                            </li>
-                            <Divider />
-                            <li className="my-5 px-4">
-                                <Link
-                                    href="/help"
-                                    onClick={onToggle}
-                                    className="flex"
-                                >
-                                    <Image
-                                        src={help}
-                                        alt="help"
-                                        className="mr-2"
-                                    />
-                                    {t("drawer.help-center")}
-                                </Link>
-                            </li>
-                            <Divider />
                         </ul>
                     </DrawerBody>
                     <DrawerFooter>
                         <section className="flex justify-self-start w-full my-5 px-4">
                             <Link
                                 href="/login"
-                                onClick={onToggle}
+                                onClick={ () => {
+                                    onToggle();
+                                    localStorage.removeItem("token");
+                                }}
                                 className="flex"
                             >
                                 <Image
