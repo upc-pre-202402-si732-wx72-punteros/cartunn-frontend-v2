@@ -6,6 +6,7 @@ import { useRef } from "react";
 import Link from "next/link";
 
 import LanguageDropdown from "@/components/LanguageDropdown";
+import userType from "@/assets/icons/frame.svg"
 import menuIcon from "@/assets/icons/menu-1.svg";
 import productList from "@/assets/icons/document-text.svg";
 import favorites from "@/assets/icons/heart.svg";
@@ -21,7 +22,6 @@ import logout from "@/assets/icons/logout-1.svg";
 
 type DrawerDashboardProps = {
     typeUser: string,
-    name: string
 }
 
 const DrawerDashborad = (props: DrawerDashboardProps) => {
@@ -40,9 +40,18 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                         ref={btnRef}
                         onClick={onToggle}
                     />
-                    <span className="ml-4 text-2xl font-extrabold tracking-tighter">​​CARTUNN DASHBOARD / {props.typeUser} - {decodeURI(props.name)}</span>
+                    <span className="ml-4 text-2xl font-extrabold tracking-tighter">​​CARTUNN DASHBOARD</span>
                 </section>
-                <LanguageDropdown />
+                <section className="flex items-center">
+                    <section className="flex mr-4">
+                        <Image
+                            src={userType}
+                            alt="user type"
+                        />
+                        <span>{`Type user: ${props.typeUser}`}</span>
+                    </section>
+                    <LanguageDropdown />
+                </section>
             </section>
             <Drawer
                 isOpen={isOpen}

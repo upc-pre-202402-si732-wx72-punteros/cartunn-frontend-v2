@@ -31,7 +31,7 @@ const LanguageDropdown = () => {
                     _hover={{ bg: "gray.50" }}
                     onClick={ () => {
                         handleChangeLangugage("en");
-                        setLanguage("English");
+                        setLanguage("english");
                     }}
                 >
                     <Image
@@ -49,7 +49,7 @@ const LanguageDropdown = () => {
                     _hover={{ bg: "gray.50" }}
                     onClick={ () => {
                         handleChangeLangugage("es");
-                        setLanguage("Spanish");
+                        setLanguage("spanish");
                     }}
                 >
                     <Image

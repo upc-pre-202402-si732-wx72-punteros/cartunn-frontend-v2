@@ -1,43 +1,18 @@
 "use client";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import environment from "@/environments/enviroment";
+
+import deleteProductById from "@/logic/deleteProductById";
 
 const RemoveItemPage = () => {
     const [itemId, setItemId] = useState(0);
 
-    const deleteItemHandler = async () => {
-        const token = localStorage.getItem("token");
-
-        const requestOptions = {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-        };
-
-        try {
-            const response = await fetch(`${environment.serverBasePath}/products/${itemId}`, requestOptions);
-
-            if (!response.ok) {
-                throw new Error("Error deleting item");
-            }
-
-            return "Item deleting successfully";
-        } catch (error) {
-            console.error(error);
-            throw new Error("Network error or server error");
-        }
-    };
-
     const notify = () => {
         toast.promise(
-            deleteItemHandler(),
-            {
+            deleteProductById(itemId), {
                 loading: "Eliminando item...",
                 success: "Item eliminado correctamente",
-                error: "Error: No se pudo eliminar el item 😔",
+                error: "Error: No se eliminó el item 😔",
             }
         );
     };

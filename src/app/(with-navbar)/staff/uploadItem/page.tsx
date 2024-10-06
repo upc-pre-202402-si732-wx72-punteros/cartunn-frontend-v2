@@ -2,47 +2,17 @@
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
-import environment from "@/environments/enviroment";
+import postProduct from "@/logic/postProduct";
 
 const UploadItemPage = () => {
     const [item, setItem] = useState({title: "", description: "", image: "", price: 0});
 
-    const uploadItemHandler = async () => {
-        const token = localStorage.getItem("token");
-
-        const requestOptions = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-            body: JSON.stringify({
-                title: item.title,
-                description: item.description,
-                image: item.image,
-                price: item.price,
-            }),
-        };
-
-        try {
-            const response = await fetch(`${environment.serverBasePath}/products`, requestOptions);
-
-            if (!response.ok) throw new Error("Error registering item");
-
-            const result = await response.json();
-            return result;
-        } catch (error) {
-            console.error(error);
-            throw new Error("Network error or server error");
-        }
-    };
-
     const notify = () => {
         toast.promise(
-            uploadItemHandler(), {
+            postProduct(item.title, item.description, item.image, item.price), {
                 loading: "Subiendo item...",
                 success: "Item subido correctamente",
-                error: "Error: No se pudo subir el item 😔",
+                error: "Error: No se subió el item 😔",
             }
         );
     };

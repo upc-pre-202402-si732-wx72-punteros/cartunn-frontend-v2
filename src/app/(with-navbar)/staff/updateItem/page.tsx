@@ -2,48 +2,17 @@
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
-import environment from "@/environments/enviroment";
+import putProduct from "@/logic/putProduct";
 
 const UpdateItemPage = () => {
     const [item, setItem] = useState({id: 0, title: "", description: "", image: "", price: 0});
 
-    const uploadItemHandler = async () => {
-        const token = localStorage.getItem("token");
-
-        const requestOptions = {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-            body: JSON.stringify({
-                id: item.id,
-                title: item.title,
-                description: item.description,
-                image: item.image,
-                price: item.price,
-            }),
-        };
-
-        try {
-            const response = await fetch(`${environment.serverBasePath}/products/${item.id}`, requestOptions);
-
-            if (!response.ok) throw new Error("Error updating item");
-
-            const result = await response.json();
-            return result;
-        } catch (error) {
-            console.error(error);
-            throw new Error("Network error or server error");
-        }
-    };
-
     const notify = () => {
         toast.promise(
-            uploadItemHandler(), {
+            putProduct(item.id, item.title, item.description, item.image, item.price), {
                 loading: "Actualizando item...",
                 success: "Item actualizado correctamente",
-                error: "Error: No se pudo actualizar el item 😔",
+                error: "Error: No se actualizó el item 😔",
             }
         );
     };

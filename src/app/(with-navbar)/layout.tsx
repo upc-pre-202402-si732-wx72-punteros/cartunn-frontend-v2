@@ -10,11 +10,10 @@ export default function WithNavbarLayout({
     const pathname = usePathname();
     let cadena = pathname.split('/');
     const typeUser = cadena[1];
-    const nameUser = cadena[2];
 
     return (
         <>
-            <DrawerDashboard typeUser={typeUser} name={nameUser} />
+            <DrawerDashboard typeUser={typeUser} />
             <main className="px-16 mt-4">
                 {children}
             </main>

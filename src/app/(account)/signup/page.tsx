@@ -51,7 +51,7 @@ const SignUp = () => {
             handleSubmit(), {
                 loading: "Registrando usuario...",
                 success: "Usuario registrado correctamente",
-                error: "Error: No se pudo registrar el usuario 😔",
+                error: "Error: No se registró el usuario 😔",
             }
         );
     };

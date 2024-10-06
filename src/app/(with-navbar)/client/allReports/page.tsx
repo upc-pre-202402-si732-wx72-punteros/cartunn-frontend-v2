@@ -1,21 +1,18 @@
-import Image from "next/image"
-
-import information from "@/assets/images/information.svg"
-
 const AllReportsPage = () => {
     return (
         <article>
             <span className="text-2xl font-extrabold tracking-tighter">All reports</span>
-            <article className="flex flex-wrap gap-4">
+            <article className="flex flex-wrap gap-x-4">
                 <section className="flex flex-col w-[24%] mt-4 px-6 py-4 border rounded-xl">
-                    <h2 className="ml-2 text-xl font-extrabold tracking-tighter">Status report</h2>
+                    <h2 className="text-xl font-extrabold tracking-tighter">Tunning task</h2>
                     <span className="my-2 italic">MG ZX Exclusice Black Premium 265l.</span>
                     <section className="flex justify-between">
-                        <span className="font-semibold text-slate-400 tracking-tighter">12/18/2004</span>
-                        <div className="flex">
-                            <Image src={information} alt="information" width={25} height={25} />
-                            <span className="ml-2">In progress</span>
-                        </div>
+                        <span className="font-semibold text-slate-400 tracking-tighter">Date:</span>
+                        <span>2024-05-06</span>
+                    </section>
+                    <section className="flex justify-between">
+                        <span className="font-semibold text-slate-400 tracking-tighter">Status:</span>
+                        <span>In progress</span>
                     </section>
                 </section>
             </article>
