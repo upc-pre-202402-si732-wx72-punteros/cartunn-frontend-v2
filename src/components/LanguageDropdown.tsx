@@ -10,6 +10,7 @@ import languages from "@/assets/icons/language-square.svg"
 
 const LanguageDropdown = () => {
     const { i18n } = useTranslation("global");
+    const { t } = useTranslation("global");
     const [language, setLanguage] = useState("English");
 
     const handleChangeLangugage = (lang: string) => {
@@ -20,8 +21,13 @@ const LanguageDropdown = () => {
         <Menu isLazy>
             <MenuButton>
                 <section className="flex">
-                    <Image src={languages} alt="languages"></Image>
-                    <span className="ml-2">Language: {language}</span>
+                    <Image
+                        src={languages}
+                        alt="languages"
+                    />
+                    <span className="ml-2">
+                        {`${t("drawer.language")}: ${language}`}
+                    </span>
                 </section>
             </MenuButton>
             <MenuList>
@@ -31,7 +37,7 @@ const LanguageDropdown = () => {
                     _hover={{ bg: "gray.50" }}
                     onClick={ () => {
                         handleChangeLangugage("en");
-                        setLanguage("English");
+                        setLanguage("english");
                     }}
                 >
                     <Image
@@ -49,7 +55,7 @@ const LanguageDropdown = () => {
                     _hover={{ bg: "gray.50" }}
                     onClick={ () => {
                         handleChangeLangugage("es");
-                        setLanguage("Spanish");
+                        setLanguage("spanish");
                     }}
                 >
                     <Image

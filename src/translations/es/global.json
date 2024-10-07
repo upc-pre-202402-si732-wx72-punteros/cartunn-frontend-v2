@@ -27,6 +27,9 @@
         "button": "Resetear tu contraseña"
     },
     "drawer": {
+        "dashboard-title": "DASHBOARD DE CARTUNN",
+        "type-user": "Tipo de usuario",
+        "language": "Lenguaje",
         "title": "Panel de opciones",
         "client": {
             "products-list": "Lista de products",
@@ -35,6 +38,7 @@
             "all-reports": "Todos los reportes",
             "shopping-cart": "Carrito de compras"
         },
+        "preferences": "PREFERENCIAS",
         "staff": {
             "orders-list": "Lista de ordenes",
             "upload-item": "Subir item",
@@ -45,5 +49,135 @@
         "configurations": "Configuraciones",
         "help-center": "Centro de ayuda",
         "logout": "Cerrar sesión"
+    },
+    "client": {
+        "home": {
+            "title": "Lista de productos",
+            "title-card": "Id del producto",
+            "title-price": "Precio",
+            "refund-button": "Reembolsar producto",
+            "order-button": "Ordenar",
+            "notifications": {
+                "added-favorites": "Añadido a favoritos",
+                "deleted-favorites": "Elemento borrado de favoritos",
+                "update-error": "Error al actualizar favoritos",
+                "order-refund": "Ordenando reembolso...",
+                "refund-ordered": "Rembolso ordenado",
+                "refund-error": "Error: No se reembolsó 😔",
+                "ordering": "Ordenando...",
+                "create-order": "Orden creada",
+                "order-error": "Error: No se creo la orden 😔"
+            }
+        }
+    },
+    "notifications": {
+        "title": "Tus notificaciones",
+        "title-card": "Información",
+        "id-product": "Id del producto",
+        "type-notification": "Tipo de notificación",
+        "notifications": {
+            "deleting-notification": "Eliminando notificación...",
+            "deleted-notification": "Notificación eliminada",
+            "notification-error": "Error: No se eliminó 😔"
+        }
+    },
+    "reports": {
+        "title": "Todos los reportes",
+        "title-card": "Tarea de tunning",
+        "date": "Fecha",
+        "status": "Estado",
+        "notifications": {
+            "deleting-report": "Eliminando tarea...",
+            "deleted-report": "Tarea eliminada",
+            "report-error": "Error: No se eliminó 😔"
+        }
+    },
+    "orders": {
+        "title": "Lista de ordenes",
+        "id": "ID",
+        "title-order": "TITULO DE LA ORDEN",
+        "product-description": "DESCRIPCIÓN DEL PRODUCT",
+        "type-notification": "TIPO DE NOTIFICACIÓN",
+        "description-notification": "DESCRIPCIÓN DE LA NOTIFICACIÓN",
+        "notification": "NOTIFICACIONES",
+        "entry": "ENTRADA",
+        "modified-part": "PARTE MODIFICADA",
+        "exit": "SALIDA",
+        "status": "ESTADO",
+        "reports": "REPORTES",
+        "delete": "ELIMINAR",
+        "notify": "Notificar",
+        "report": "Reportar",
+        "notifications": {
+            "post-notification": "Notificando...",
+            "sent-notification": "Notificación enviada",
+            "notification-error": "Error: No se notificó 😔",
+            "post-report": "Reportando...",
+            "sent-report": "Reporte enviado",
+            "report-error": "Error: No se reportó 😔",
+            "deleting-order": "Eliminando...",
+            "deleted-order": "Orden eliminada",
+            "order-error": "Error: No se eliminó 😔"
+        }
+    },
+    "upload-item": {
+        "title": "Subir item",
+        "title-placeholder": "Ingresar el titulo de la orden",
+        "description-placeholder": "Ingresar la descripción",
+        "image-placeholder": "Ingresar la url de la imágen",
+        "price-placeholder": "Ingresar el precio",
+        "button": "Subir item",
+        "notifications": {
+            "post-item": "Subiendo item...",
+            "sent-item": "Item subido",
+            "upload-error": "Error: No se subió 😔"
+        }
+    },
+    "update-item": {
+        "id": "Id",
+        "title": "Actualizar item",
+        "title-placeholder": "Ingresar el titulo de la orden",
+        "description-placeholder": "Ingresar la descripción",
+        "image-placeholder": "Ingresar la url de la imágen",
+        "price-placeholder": "Ingresar el precio",
+        "button": "Actualizar item",
+        "notifications": {
+            "post-item": "Actualizando...",
+            "sent-item": "Item actualizado",
+            "upload-error": "Error: No se actualizó 😔"
+        }
+    },
+    "remove-item": {
+        "title": "Eliminar item",
+        "id-placeholder": "Ingresar el id",
+        "button": "Elimnar item",
+        "notifications": {
+            "deleting-item": "Eliminando...",
+            "deleted-item": "Item eliminado",
+            "upload-error": "Error: No se eliminó 😔"
+        }
+    },
+    "manage-returns": {
+        "title": "Manejar reembolsos",
+        "title-card": "Id del producto",
+        "status": "Estado"
+    },
+    "configurations": {
+        "title": "Settings",
+        "username-placeholder": "Ingresar el username",
+        "password-placeholder": "Ingresar la contraseña",
+        "change-type": "Cambiar tipo de cuenta",
+        "staff": "Staff mecánico",
+        "client": "Cliente",
+        "button": "Cambiar datos"
+    },
+    "help-center": {
+        "title": "Centro de ayuda",
+        "title-1": "🚘 ¿Afectará el tuning a la garantía de mi coche?",
+        "text-1": "En general, realizar modificaciones en su coche puede afectar a la garantía, especialmente si estas modificaciones están relacionadas con el motor u otros componentes importantes. Sin embargo, nuestro equipo se asegurará de que cualquier modificación realizada cumpla con las normas y especificaciones del fabricante para minimizar cualquier riesgo de garantía.",
+        "title-2": "📄​ ¿Cuánto se tarda en completar el proceso de ajuste?",
+        "text-2": "El tiempo necesario para completar el proceso de tuning puede variar en función del alcance de las modificaciones y de la disponibilidad de los componentes necesarios. Nuestro equipo le proporcionará una estimación detallada del tiempo de espera una vez que hayamos evaluado su coche y acordado los detalles del trabajo a realizar.",
+        "title-3": "🗂️​ ¿Hasta qué punto son seguras las modificaciones realizadas a través del servicio de tuning?",
+        "text-3": "La seguridad es nuestra máxima prioridad. Todas las modificaciones realizadas en su coche son llevadas a cabo por profesionales experimentados y se adhieren a los más altos estándares de calidad y seguridad. Además, utilizamos componentes de calidad probada y realizamos pruebas exhaustivas para garantizar la fiabilidad y seguridad de todas las modificaciones."
     }
 }

@@ -55,7 +55,7 @@ const Login = () => {
         toast.promise(signInHandler(), {
             loading: "Iniciando sesión",
             success: "Sesión iniciada correctamente",
-            error: "Error: El usuario no está registrado 😔",
+            error: "Error: Uuario no registrado 😔",
         });
     };
 

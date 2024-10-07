@@ -17,7 +17,7 @@ const ResetPassword = () => {
     };
 
     return (
-        <section className="flex items-center w-1/4 h-screen m-auto px-16">
+        <section className="flex items-center w-full sm:w-1/2 xl:w-1/5 h-screen m-auto">
             <section className="w-full">
                 <BackButton route="/login" />
                 <h1 className="mt-8 text-4xl text-center font-extrabold tracking-tighter">{t("reset-password.title")}</h1>

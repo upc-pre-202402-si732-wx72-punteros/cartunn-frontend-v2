@@ -8,27 +8,22 @@ const ConfigurationsPage = () => {
     const [value, setValue] = useState("staff");
     const [username, setUsername] = useState("");
 
-    const setRouterHandler = () => {
-        if (value) {
-            if (value === "staff") window.location.href = `/${value}/${username}/home`;
-            else if (value === "client") window.location.href = `/${value}/${username}/home`;
-        }
-    };
-
     return (
         <article className="flex items-center w-1/4 mx-auto my-52 px-16">
             <section className="w-full">
-                <h1 className="mt-8 text-4xl text-center font-extrabold tracking-tighter">Settings</h1>
+                <span className="mt-8 text-4xl text-center font-extrabold tracking-tighter">
+                    {t("configurations.title")}
+                </span>
                 <section className="flex flex-col mx-auto my-4">
                     <input
                         type="text"
-                        placeholder={t("login.user-placeholder")}
+                        placeholder={t("configurations.username-placeholder")}
                         className="c-input__input"
                         onChange={(e) => { setUsername(e.target.value) }}
                     />
                     <input
                         type="password"
-                        placeholder={t("login.password-placeholder")}
+                        placeholder={t("configurations.password-placeholder")}
                         className="c-input__input mt-2"
                     />
                     <RadioGroup
@@ -36,18 +31,20 @@ const ConfigurationsPage = () => {
                         value={value}
                     >
                         <Stack my={4}>
-                            <span>Change kind of account: </span>
+                            <span>{`${t("configurations.change-type")}:`}</span>
                             <section className="flex">
-                                <Radio value="staff" mr={4}>Staff mecánico</Radio>
-                                <Radio value="client">Cliente</Radio>
+                                <Radio value="staff" mr={4}>{t("configurations.staff")}</Radio>
+                                <Radio value="client">{t("configurations.client")}</Radio>
                             </section>
                         </Stack>
                     </RadioGroup>
                     <button
                         className="c-button py-4 font-semibold"
-                        onClick={setRouterHandler}
+                        onClick={() => {
+                            window.location.href = "/"
+                        }}
                     >
-                        Change data
+                        {t("configurations.button")}
                     </button>
                 </section>
             </section>
