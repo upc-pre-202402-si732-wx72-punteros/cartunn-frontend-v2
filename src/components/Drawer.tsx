@@ -40,7 +40,9 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                         ref={btnRef}
                         onClick={onToggle}
                     />
-                    <span className="ml-4 text-2xl font-extrabold tracking-tighter">​​CARTUNN DASHBOARD</span>
+                    <span className="ml-4 text-2xl font-extrabold tracking-tighter">​
+                        {t("drawer.dashboard-title")}
+                    </span>
                 </section>
                 <section className="flex items-center">
                     <section className="flex mr-4">
@@ -48,7 +50,9 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                             src={userType}
                             alt="user type"
                         />
-                        <span>{`Type user: ${props.typeUser}`}</span>
+                        <span>
+                            {`${t("drawer.type-user")}: ${props.typeUser}`}
+                        </span>
                     </section>
                     <LanguageDropdown />
                 </section>
@@ -62,7 +66,9 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                 <DrawerOverlay />
                 <DrawerContent>
                     <DrawerHeader>
-                        <h2 className="mt-8 text-2xl text-center font-bold tracking-tighter">{t("drawer.title")}</h2>
+                        <h2 className="mt-8 text-2xl text-center font-bold tracking-tighter">
+                            {t("drawer.title")}
+                        </h2>
                     </DrawerHeader>
                     <DrawerBody>
                         <ul className="flex flex-col">
@@ -145,7 +151,9 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     </Link>
                                 </li>
                                 <Divider />
-                                <span className="mt-6 mb-2 px-4 text-xl font-semibold tracking-tighter">Preferences</span>
+                                <span className="mt-6 mb-2 px-4 text-xl font-semibold tracking-tighter">
+                                    {t("drawer.preferences")}
+                                </span>
                                 <li className="my-5 px-4">
                                     <Link
                                         href={`/${props.typeUser}/configurations`}

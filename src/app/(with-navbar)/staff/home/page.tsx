@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import toast, { Toaster } from "react-hot-toast";
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer } from "@chakra-ui/react";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
@@ -14,6 +15,7 @@ import postNotification from "@/logic/postNotifications";
 import postTunningTask from "@/logic/postTunningTask";
 
 const HomePage = () => {
+    const { t } = useTranslation("global");
     const [orders, setOrders] = useState<Order[]>([]);
     const [notification, setNotification] = useState({ type: "", description: "" });
     const [tunningTask, setTunningTask] = useState({ modifiedPart: "", date: "" });
@@ -44,9 +46,9 @@ const HomePage = () => {
     const notificationHandler = (orderId: number) => {
         toast.promise(
             postNotification(orderId, notification.type, notification.description), {
-                loading: "Notificando...",
-                success: "Notificación enviada",
-                error: "Error: No se notificó 😔",
+                loading: t("orders.notifications.post-notification"),
+                success: t("orders.notifications.sent-notification"),
+                error: t("orders.notifications.notification-error"),
             }
         );
     };
@@ -56,10 +58,10 @@ const HomePage = () => {
         if (!order) return;
 
         toast.promise(
-            postTunningTask(tunningTask.modifiedPart, tunningTask.date, order.status), {
-                loading: "Reportando...",
-                success: "Reporte enviado",
-                error: "Error: No se reportó 😔",
+            postTunningTask(tunningTask.modifiedPart, order.exitDate, order.status), {
+                loading: t("orders.notifications.post-report"),
+                success: t("orders.notifications.sent-report"),
+                error: t("orders.notifications.report-error"),
             }
         );
     };
@@ -67,9 +69,9 @@ const HomePage = () => {
     const deleteOrderHandler = (orderId: number) => {
         toast.promise(
             deleteOrderById(orderId), {
-                loading: "Eliminando orden...",
-                success: "Orden eliminada correctamente",
-                error: "Error: No se eliminó la orden 😔",
+                loading: t("orders.notifications.deleting-order"),
+                success: t("orders.notifications.deleted-order"),
+                error: t("orders.notifications.order-error"),
             }
         );
     };
@@ -77,28 +79,30 @@ const HomePage = () => {
     return (
         <article>
             <Toaster />
-            <span className="text-2xl font-extrabold tracking-tighter">Orders list</span>
+            <span className="text-2xl font-extrabold tracking-tighter">
+                {t("orders.title")}
+            </span>
             <section className="flex justify-between">
                 <TableContainer className="w-full mt-4">
                     <Table variant="simple" colorScheme="gray">
                         <Thead>
                             <Tr>
-                                <Th textAlign="center">ID</Th>
-                                <Th textAlign="center">Title order</Th>
-                                <Th textAlign="center">Product description</Th>
-                                <Th textAlign="center">Type notification</Th>
-                                <Th textAlign="center">Description notification</Th>
-                                <Th textAlign="center">Notification</Th>
-                                <Th textAlign="center">Entry</Th>
-                                <Th textAlign="center">Modified part</Th>
-                                <Th textAlign="center">Exit</Th>
-                                <Th textAlign="center">Status</Th>
-                                <Th textAlign="center">Reports</Th>
-                                <Th textAlign="center">Delete</Th>
+                                <Th textAlign="center">{t("orders.id")}</Th>
+                                <Th textAlign="center">{t("orders.title-order")}</Th>
+                                <Th textAlign="center">{t("orders.product-description")}</Th>
+                                <Th textAlign="center">{t("orders.type-notification")}</Th>
+                                <Th textAlign="center">{t("orders.description-notification")}</Th>
+                                <Th textAlign="center">{t("orders.notification")}</Th>
+                                <Th textAlign="center">{t("orders.entry")}</Th>
+                                <Th textAlign="center">{t("orders.modified-part")}</Th>
+                                <Th textAlign="center">{t("orders.exit")}</Th>
+                                <Th textAlign="center">{t("orders.status")}</Th>
+                                <Th textAlign="center">{t("orders.reports")}</Th>
+                                <Th textAlign="center">{t("orders.delete")}</Th>
                             </Tr>
                         </Thead>
                         <Tbody>
-                            {orders.map((order) => (
+                            {orders && orders.map((order) => (
                                 <Tr key={order.id}>
                                     <Td textAlign="center">{order.code}</Td>
                                     <Td textAlign="center">{order.name}</Td>
@@ -126,7 +130,7 @@ const HomePage = () => {
                                             className="c-button px-4 py-2 font-semibold"
                                             onClick={() => notificationHandler(order.id)}
                                         >
-                                            Notify
+                                            {t("orders.notify")}
                                         </button>
                                     </Td>
                                     <Td textAlign="center">{order.entryDate}</Td>
@@ -180,7 +184,7 @@ const HomePage = () => {
                                             className="c-button px-4 py-2 font-semibold"
                                             onClick={() => tunningTaskHandler(order.id)}
                                         >
-                                            Report
+                                            {t("orders.report")}
                                         </button>
                                     </Td>
                                     <Td>

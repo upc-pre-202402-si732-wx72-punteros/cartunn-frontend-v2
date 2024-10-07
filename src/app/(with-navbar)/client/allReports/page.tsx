@@ -1,20 +1,39 @@
+"use client";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import getTunningTasks from "@/logic/getTunningTasks";
+
+import TunningTask from "@/interfaces/TunningTask";
+import TunningTaskClientCard from "@/components/TunningTaskClientCard";
+
 const AllReportsPage = () => {
+    const { t } = useTranslation("global");
+    const [tunningTasks, setTunningTasks] = useState<TunningTask[]>([]);
+
+    const getData = async () => {
+        const response = await getTunningTasks();
+        setTunningTasks(response);
+    }
+
+    useEffect(() => {
+        getData();
+    }, []);
+
     return (
         <article>
-            <span className="text-2xl font-extrabold tracking-tighter">All reports</span>
+            <span className="text-2xl font-extrabold tracking-tighter">
+                {t("reports.title")}
+            </span>
             <article className="flex flex-wrap gap-x-4">
-                <section className="flex flex-col w-[24%] mt-4 px-6 py-4 border rounded-xl">
-                    <h2 className="text-xl font-extrabold tracking-tighter">Tunning task</h2>
-                    <span className="my-2 italic">MG ZX Exclusice Black Premium 265l.</span>
-                    <section className="flex justify-between">
-                        <span className="font-semibold text-slate-400 tracking-tighter">Date:</span>
-                        <span>2024-05-06</span>
-                    </section>
-                    <section className="flex justify-between">
-                        <span className="font-semibold text-slate-400 tracking-tighter">Status:</span>
-                        <span>In progress</span>
-                    </section>
-                </section>
+                {tunningTasks && tunningTasks.map((el) => (
+                    <TunningTaskClientCard
+                        key={el.id}
+                        id={el.id}
+                        modifiedPart={el.modifiedPart}
+                        date={el.date}
+                        status={el.status}
+                    />
+                ))}
             </article>
         </article>
     );

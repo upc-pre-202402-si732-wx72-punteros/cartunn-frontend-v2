@@ -5,7 +5,7 @@ interface Order {
     description: string;
     entryDate: string;
     exitDate: string;
-    status: string;
+    status: string
 }
 
 export default Order;
