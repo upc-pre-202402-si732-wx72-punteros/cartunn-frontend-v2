@@ -6,6 +6,7 @@ import { useRef } from "react";
 import Link from "next/link";
 
 import LanguageDropdown from "@/components/LanguageDropdown";
+import userType from "@/assets/icons/frame.svg"
 import menuIcon from "@/assets/icons/menu-1.svg";
 import productList from "@/assets/icons/document-text.svg";
 import favorites from "@/assets/icons/heart.svg";
@@ -21,7 +22,6 @@ import logout from "@/assets/icons/logout-1.svg";
 
 type DrawerDashboardProps = {
     typeUser: string,
-    name: string
 }
 
 const DrawerDashborad = (props: DrawerDashboardProps) => {
@@ -40,9 +40,22 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                         ref={btnRef}
                         onClick={onToggle}
                     />
-                    <span className="ml-4 text-2xl font-extrabold tracking-tighter">​​CARTUNN DASHBOARD / {props.typeUser} - {decodeURI(props.name)}</span>
+                    <span className="ml-4 text-2xl font-extrabold tracking-tighter">​
+                        {t("drawer.dashboard-title")}
+                    </span>
                 </section>
-                <LanguageDropdown />
+                <section className="flex items-center">
+                    <section className="flex mr-4">
+                        <Image
+                            src={userType}
+                            alt="user type"
+                        />
+                        <span>
+                            {`${t("drawer.type-user")}: ${props.typeUser}`}
+                        </span>
+                    </section>
+                    <LanguageDropdown />
+                </section>
             </section>
             <Drawer
                 isOpen={isOpen}
@@ -53,7 +66,9 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                 <DrawerOverlay />
                 <DrawerContent>
                     <DrawerHeader>
-                        <h2 className="mt-8 text-2xl text-center font-bold tracking-tighter">{t("drawer.title")}</h2>
+                        <h2 className="mt-8 text-2xl text-center font-bold tracking-tighter">
+                            {t("drawer.title")}
+                        </h2>
                     </DrawerHeader>
                     <DrawerBody>
                         <ul className="flex flex-col">
@@ -136,7 +151,9 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     </Link>
                                 </li>
                                 <Divider />
-                                <span className="mt-6 mb-2 px-4 text-xl font-semibold tracking-tighter">Preferences</span>
+                                <span className="mt-6 mb-2 px-4 text-xl font-semibold tracking-tighter">
+                                    {t("drawer.preferences")}
+                                </span>
                                 <li className="my-5 px-4">
                                     <Link
                                         href={`/${props.typeUser}/configurations`}

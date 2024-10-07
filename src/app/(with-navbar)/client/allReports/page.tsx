@@ -1,23 +1,39 @@
-import Image from "next/image"
+"use client";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import getTunningTasks from "@/logic/getTunningTasks";
 
-import information from "@/assets/images/information.svg"
+import TunningTask from "@/interfaces/TunningTask";
+import TunningTaskClientCard from "@/components/TunningTaskClientCard";
 
 const AllReportsPage = () => {
+    const { t } = useTranslation("global");
+    const [tunningTasks, setTunningTasks] = useState<TunningTask[]>([]);
+
+    const getData = async () => {
+        const response = await getTunningTasks();
+        setTunningTasks(response);
+    }
+
+    useEffect(() => {
+        getData();
+    }, []);
+
     return (
         <article>
-            <span className="text-2xl font-extrabold tracking-tighter">All reports</span>
-            <article className="flex flex-wrap gap-4">
-                <section className="flex flex-col w-[24%] mt-4 px-6 py-4 border rounded-xl">
-                    <h2 className="ml-2 text-xl font-extrabold tracking-tighter">Status report</h2>
-                    <span className="my-2 italic">MG ZX Exclusice Black Premium 265l.</span>
-                    <section className="flex justify-between">
-                        <span className="font-semibold text-slate-400 tracking-tighter">12/18/2004</span>
-                        <div className="flex">
-                            <Image src={information} alt="information" width={25} height={25} />
-                            <span className="ml-2">In progress</span>
-                        </div>
-                    </section>
-                </section>
+            <span className="text-2xl font-extrabold tracking-tighter">
+                {t("reports.title")}
+            </span>
+            <article className="flex flex-wrap gap-x-4">
+                {tunningTasks && tunningTasks.map((el) => (
+                    <TunningTaskClientCard
+                        key={el.id}
+                        id={el.id}
+                        modifiedPart={el.modifiedPart}
+                        date={el.date}
+                        status={el.status}
+                    />
+                ))}
             </article>
         </article>
     );

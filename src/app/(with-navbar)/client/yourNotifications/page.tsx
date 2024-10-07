@@ -1,23 +1,36 @@
-import Image from "next/image"
+"use client";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import NotificationClientCard from "@/components/NotificationClientCard";
 
-import information from "@/assets/images/information.svg"
+import Notification from "@/interfaces/Notification";
+import getNotifications from "@/logic/getNotifications";
 
 const YourNotificationsPage = () => {
+    const { t } = useTranslation("global");
+    const [notifications, setNotifications] = useState<Notification[]>([]);
+
+    const getData = async () => {
+        const response = await getNotifications();
+        setNotifications(response);
+    }
+
+    useEffect(() => {
+        getData();
+    }, []);
+
     return (
         <article className="">
-            <span className="text-2xl font-extrabold tracking-tighter">Your notifications</span>
-            <article className="flex flex-wrap gap-4">
-                <section className="flex flex-col w-[24%] mt-4 px-6 py-4 border rounded-xl">
-                    <section className="flex my-2">
-                        <Image src={information} alt="information" width={25} height={25} />
-                        <h2 className="ml-2 text-xl font-extrabold tracking-tighter">Information</h2>
-                    </section>
-                    <span className="my-2 italic text-sm">Your car has entered the mechanical workshop.</span>
-                    <section className="flex justify-between">
-                        <span>Delivery date:</span>
-                        <span className="font-bold tracking-tighter">12/18/2004</span>
-                    </section>
-                </section>
+            <span className="text-2xl font-extrabold tracking-tighter">{t("notifications.title")}</span>
+            <article className="flex flex-wrap gap-x-4">
+                {notifications && notifications.map((el) => (
+                    <NotificationClientCard
+                        key={el.id}
+                        id={el.id}
+                        type={el.type}
+                        description={el.description}
+                    />
+                ))}
             </article>
         </article>
     );
