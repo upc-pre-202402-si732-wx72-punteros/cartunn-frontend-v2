@@ -7,7 +7,12 @@
         "forgot-password": "Have you forgot your password?",
         "button": "Login",
         "do-you-already-have-an-account": "Already have an account?",
-        "sign-up": "Sign up"
+        "sign-up": "Sign up",
+        "notifications": {
+            "success": "Logging in",
+            "in-process": "Session logged in",
+            "error": "Error: User not registered 😔"
+        }
     },
     "sign-up": {
         "title": "SIGN UP",
@@ -18,13 +23,23 @@
         "client": "Client",
         "button": "Sign up",
         "already-have-an-account": "Already have an account?",
-        "login": "Login"
+        "login": "Login",
+        "notifications": {
+            "success": "Creating an account",
+            "in-process": "Account created",
+            "error": "Error: Account was not created 😔"
+        }
     },
     "reset-password": {
         "title": "RESET PASSWORD",
         "name-placeholder": "Enter your username",
         "password-placeholder": "Enter your password",
-        "button": "Reset your password"
+        "button": "Reset your password",
+        "notifications": {
+            "success": "Resetting password",
+            "in-process": "Password reset",
+            "error": "Error: Failed to reset 😔"
+        }
     },
     "drawer": {
         "dashboard-title": "CARTUNN DASHBOARD",
@@ -70,6 +85,15 @@
             }
         }
     },
+    "favorites": {
+        "title": "Favorites list",
+        "title-card": "Id product",
+        "notifications": {
+            "deleting-favorite": "Deleting favorite...",
+            "deleted-favorite": "Favorite deleted",
+            "favorite-error": "Error: Failed to remove 😔"
+        }
+    },
     "notifications": {
         "title": "Your notifications",
         "title-card": "Information",
@@ -90,6 +114,20 @@
             "deleting-report": "Deleting report...",
             "deleted-report": "Report deleted",
             "report-error": "Error: Failed to remove 😔"
+        }
+    },
+    "shopping-cart": {
+        "title": "Shopping cart",
+        "title-card": "Id product",
+        "price": "Price",
+        "order": "Summary of the order",
+        "total": "Total",
+        "checkout-button": "Pay the order",
+        "payment": "Payment method in construction...",
+        "notifications": {
+            "deleting-item": "Deleting cart...",
+            "deleted-item": "Cart deleted",
+            "item-error": "Error: Failed to remove 😔"
         }
     },
     "orders": {
@@ -160,7 +198,12 @@
     "manage-returns": {
         "title": "Manage returns",
         "title-card": "Id product",
-        "status": "Status"
+        "status": "Status",
+        "notifications": {
+            "deleting-return": "Deleting return...",
+            "deleted-return": "Return deleted",
+            "upload-error": "Error: Failed to remove 😔"
+        }
     },
     "configurations": {
         "title": "Settings",

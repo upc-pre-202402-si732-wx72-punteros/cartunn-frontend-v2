@@ -18,7 +18,7 @@ const manageReturns = () => {
 
     useEffect(() => {
         getData();
-    }, []);
+    }, [products]);
 
     return (
         <article>
@@ -26,8 +26,7 @@ const manageReturns = () => {
                 {t("manage-returns.title")}
             </span>
             <article className="flex flex-wrap gap-x-4">
-                {
-                    products.map((product) => (
+                {products && products.map((product) => (
                         <RefundStaffCard
                             key={product.id}
                             id={product.id}
@@ -35,8 +34,7 @@ const manageReturns = () => {
                             description={product.description}
                             status={product.status}
                         />
-                    ))
-                }
+                ))}
             </article>
         </article>
     );

@@ -5,18 +5,17 @@ import Link from "next/link";
 import { Stack, Radio, RadioGroup } from "@chakra-ui/react";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-
 import BackButton from "@/components/BackButton";
 import environment from "@/environments/enviroment";
 
 const SignUp = () => {
     const { t } = useTranslation("global");
     const [role, setRole] = useState("1");
-    const [user, setUser] = useState({username: "", password: "", role: role});
+    const [user, setUser] = useState({ username: "", password: "" });
     const router = useRouter();
 
     const signUpHandler = async () => {
-        const requestOptions = {
+        const userRequestOptions = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -24,16 +23,15 @@ const SignUp = () => {
             body: JSON.stringify({
                 username: user.username,
                 password: user.password,
-                //roles: [user.role]
             }),
         };
 
         try {
-            const response = await fetch(`${environment.serverBasePath}/authentication/sign-up`, requestOptions);
+            const userResponse = await fetch(`${environment.serverBasePath}/authentication/sign-up`, userRequestOptions);
 
-            if (!response.ok) throw new Error("Error registering user");
+            if (!userResponse.ok) throw new Error("Error registering user");
 
-            const result = await response.json();
+            const result = await userResponse.json();
             return result;
         } catch (error) {
             console.error(error);
@@ -43,17 +41,18 @@ const SignUp = () => {
 
     const handleSubmit = async () => {
         await signUpHandler();
+        if (role === "2")
+            localStorage.setItem('user', JSON.stringify({ username: user.username, password: user.password, role: role }));
         router.push("/login");
     };
 
     const notify = () => {
         toast.promise(
             handleSubmit(), {
-                loading: "Registrando usuario...",
-                success: "Usuario registrado correctamente",
-                error: "Error: No se registró el usuario 😔",
-            }
-        );
+                loading: t("sign-up.notifications.success"),
+                success: t("sign-up.notifications.in-process"),
+                error: t("sign-up.notifications.error"),
+        });
     };
 
     return (
@@ -90,7 +89,10 @@ const SignUp = () => {
                             </section>
                         </Stack>
                     </RadioGroup>
-                    <button className="c-button py-4 font-semibold" onClick={notify}>
+                    <button
+                        className="c-button py-4 font-semibold"
+                        onClick={notify}
+                    >
                         {t("sign-up.button")}
                     </button>
                 </section>

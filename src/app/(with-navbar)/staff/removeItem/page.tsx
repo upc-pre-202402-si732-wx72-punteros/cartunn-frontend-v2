@@ -23,9 +23,9 @@ const RemoveItemPage = () => {
         <article className="flex items-center w-full sm:w-1/2 xl:w-1/5 my-64 m-auto">
             <Toaster />
             <section className="w-full">
-                <span className="mt-8 text-4xl text-center font-extrabold tracking-tighter">
+                <h1 className="mt-8 text-4xl text-center font-extrabold tracking-tighter">
                     {t("remove-item.title")}
-                </span>
+                </h1>
                 <section className="flex flex-col mx-auto my-4">
                     <input
                         type="number"

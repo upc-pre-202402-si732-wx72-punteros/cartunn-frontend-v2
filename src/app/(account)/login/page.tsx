@@ -4,12 +4,13 @@ import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-
+import Image from "next/image";
 import environment from "@/environments/enviroment";
+import imageBg from "@/assets/images/background.png";
 
 const Login = () => {
     const { t } = useTranslation("global");
-    const [user, setUser] = useState({username: "", password: ""});
+    const [user, setUser] = useState({ username: "", password: "" });
     const router = useRouter();
 
     useEffect(() => {
@@ -18,6 +19,13 @@ const Login = () => {
             password: user.password,
         });
     }, [user.username, user.password]);
+
+    const loginHandler = () => {
+        const storedUser = localStorage.getItem("user");
+        if (!storedUser) {
+            router.push("/client/home");
+        } else router.push("/staff/home");
+    }
 
     const signInHandler = async () => {
         const requestOptions = {
@@ -38,31 +46,22 @@ const Login = () => {
 
         const result = await response.json();
         localStorage.setItem("token", result.token);
+        loginHandler();
         return result;
     };
 
-    //if (localStorage.getItem("token")) {
-    //    const fetchData = async () => {
-    //        const data = await fetch(`${environment.serverBasePath}/users`);
-    //        if (data) {
-    //            if (data === "ROLE_CLIENT") router.push("/client/home");
-    //            else router.push("/staff/home");
-    //        }
-    //    }
-    //}
-
     const notify = () => {
         toast.promise(signInHandler(), {
-            loading: "Iniciando sesión",
-            success: "Sesión iniciada correctamente",
-            error: "Error: Uuario no registrado 😔",
+            loading: t("login.notifications.success"),
+            success: t("login.notifications.in-process"),
+            error: t("login.notifications.error"),
         });
     };
 
     return (
-        <section className="flex items-center w-full sm:w-1/2 xl:w-1/5 h-screen m-auto">
+        <section className="flex items-center h-screen">
             <Toaster />
-            <section className="w-full">
+            <section className="w-full lg:w-1/2 px-8 sm:px-40 lg:px-20 xl:px-40 2xl:px-60">
                 <h1 className="mt-8 text-5xl text-center font-extrabold tracking-tighter">
                     {t("login.title")}
                 </h1>
@@ -90,7 +89,9 @@ const Login = () => {
                     </span>
                     <button
                         className="c-button py-4 font-semibold"
-                        onClick={notify}
+                        onClick={() => {
+                            notify();
+                        }}
                     >
                         {t("login.button")}
                     </button>
@@ -101,6 +102,12 @@ const Login = () => {
                         <u>{t("login.sign-up")}</u>
                     </Link>
                 </span>
+            </section>
+            <section className="hidden lg:flex justify-end w-1/2">
+                <Image
+                    src={imageBg}
+                    alt="background"
+                />
             </section>
         </section>
     );
