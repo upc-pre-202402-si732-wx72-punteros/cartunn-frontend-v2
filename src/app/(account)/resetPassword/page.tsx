@@ -12,6 +12,7 @@ const ResetPassword = () => {
     const [user, setUser] = useState({username: "", password: ""});
     const router = useRouter();
 
+    /*
     const token = localStorage.getItem("token");
 
     const signUpHandler = async () => {
@@ -38,10 +39,10 @@ const ResetPassword = () => {
             console.error(error);
             throw new Error("Network error or server error");
         }
-    };
+    };*/
 
     const setRouterHandler = async () => {
-        await signUpHandler();
+        // await signUpHandler();
         router.push("/login");
     };
 
