@@ -7,7 +7,12 @@
         "forgot-password": "¿Has olvidado tu contraseña?",
         "button": "Iniciar sesión",
         "do-you-already-have-an-account": "¿No tienes cuenta?",
-        "sign-up": "Crear cuenta"
+        "sign-up": "Crear cuenta",
+        "notifications": {
+            "success": "Iniciando sesión",
+            "in-process": "Sesión iniciada correctamente",
+            "error": "Error: Usuario no registrado 😔"
+        }
     },
     "sign-up": {
         "title": "REGISTRO",
@@ -18,13 +23,23 @@
         "client": "Cliente",
         "button": "Crear cuenta",
         "already-have-an-account": "¿Ya tienes cuenta?",
-        "login": "Iniciar sesión"
+        "login": "Iniciar sesión",
+        "notifications": {
+            "success": "Creando cuenta",
+            "in-process": "Cuenta creada correctamente",
+            "error": "Error: No se creó la cuenta 😔"
+        }
     },
     "reset-password": {
         "title": "RESETEA TU CONTRASEÑA",
         "name-placeholder": "Ingresar usuario",
         "password-placeholder": "Ingresar contraseña",
-        "button": "Resetear tu contraseña"
+        "button": "Resetear tu contraseña",
+        "notifications": {
+            "success": "Reseteando contraseña",
+            "in-process": "Contraseña reseteado",
+            "error": "Error: No se reseteó 😔"
+        }
     },
     "drawer": {
         "dashboard-title": "DASHBOARD DE CARTUNN",
@@ -32,7 +47,7 @@
         "language": "Lenguaje",
         "title": "Panel de opciones",
         "client": {
-            "products-list": "Lista de products",
+            "products-list": "Lista de productos",
             "favorite-list": "Lista de favoritos",
             "your-notifications": "Tus notifications",
             "all-reports": "Todos los reportes",
@@ -70,6 +85,15 @@
             }
         }
     },
+    "favorites": {
+        "title": "Lista de favoritos",
+        "title-card": "Id del producto",
+        "notifications": {
+            "deleting-favorite": "Eliminando favorito...",
+            "deleted-favorite": "Favorito eliminado",
+            "favorite-error": "Error: No se eliminó 😔"
+        }
+    },
     "notifications": {
         "title": "Tus notificaciones",
         "title-card": "Información",
@@ -90,6 +114,20 @@
             "deleting-report": "Eliminando tarea...",
             "deleted-report": "Tarea eliminada",
             "report-error": "Error: No se eliminó 😔"
+        }
+    },
+    "shopping-cart": {
+        "title": "Carrito de compras",
+        "title-card": "Id del producto",
+        "price": "Precio",
+        "order": "Resumen del pedido",
+        "total": "Total",
+        "checkout-button": "Pagar el pedido",
+        "payment": "Pasarela en construcción...",
+        "notifications": {
+            "deleting-item": "Eliminando producto...",
+            "deleted-item": "Producto eliminado",
+            "item-error": "Error: No se eliminó 😔"
         }
     },
     "orders": {
@@ -160,10 +198,15 @@
     "manage-returns": {
         "title": "Manejar reembolsos",
         "title-card": "Id del producto",
-        "status": "Estado"
+        "status": "Estado",
+        "notifications": {
+            "deleting-return": "Eliminando reembolso...",
+            "deleted-return": "Reembolso eliminado",
+            "upload-error": "Error: No se eliminó 😔"
+        }
     },
     "configurations": {
-        "title": "Settings",
+        "title": "Configuraciones",
         "username-placeholder": "Ingresar el username",
         "password-placeholder": "Ingresar la contraseña",
         "change-type": "Cambiar tipo de cuenta",

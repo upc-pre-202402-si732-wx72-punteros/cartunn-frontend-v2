@@ -1,36 +1,53 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import toast, { Toaster } from "react-hot-toast";
 
 import ShoppingClientCard from "@/components/ShoppingClientCard";
 
-import Product from "@/interfaces/Product";
-import getProducts from "@/logic/getProducts";
+import Order from "@/interfaces/Order";
+import getOrders from "@/logic/getOrders";
 
 const ShoppingCartPage = () => {
-    const [products, setProducts] = useState<Product[]>([]);
+    const { t } = useTranslation("global");
+    const [totalPrice, setTotalPrice] = useState("");
+    const [orders, setOrders] = useState<Order[]>([]);
 
     const getData = async () => {
-        const response = await getProducts();
-        setProducts(response);
+        const response = await getOrders();
+        setOrders(response);
     }
+
+    const price = localStorage.getItem("total price");
 
     useEffect(() => {
         getData();
-    }, []);
+        if (price) setTotalPrice(price.toString());
+    }, [orders]);
 
     return (
         <article>
-            <span className="text-2xl font-extrabold tracking-tighter">Shopping cart</span>
+            <Toaster />
+            <span className="text-2xl font-extrabold tracking-tighter">{t("shopping-cart.title")}</span>
             <article className="flex">
                 <article className="flex flex-wrap gap-4 w-5/6">
-
-                    <ShoppingClientCard/>
-
+                    {orders && orders.map((el) => (
+                        <ShoppingClientCard
+                            id={el.id}
+                        />
+                    ))}
                 </article>
                 <section className="flex flex-col w-1/6">
-                    <span className="text-2xl font-extrabold tracking-tighter">Resumen de pedido</span>
-                    <span className="my-2">Total: $225.00</span>
-                    <button className="c-button mt-2 py-3 font-semibold">Pagar el pedido</button>
+                    <span className="text-2xl font-extrabold tracking-tighter">{t("shopping-cart.order")}</span>
+                    <span className="my-2">{t("shopping-cart.total")}: ${totalPrice.replace(/[\[\]]/g, '')}.00</span>
+                    <button
+                        className="c-button mt-2 py-3 font-semibold"
+                        onClick={() => {
+                            toast.error(t("shopping-cart.payment"));
+                        }}
+                    >
+                        {t("shopping-cart.checkout-button")}
+                    </button>
                 </section>
             </article>
         </article>

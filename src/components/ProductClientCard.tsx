@@ -83,7 +83,7 @@ const ProductClientCard = (props: Product) => {
                     <span className="font-bold tracking-tighter">
                         {t("client.home.title-price")}
                     </span>
-                    <span className="font-bold tracking-tighter">${props.price}</span>
+                    <span className="font-bold tracking-tighter">${props.price}.00</span>
                 </section>
                 <button
                     className="mt-2 py-3 bg-gray-50 hover:bg-gray-200 font-semibold rounded-sm border"

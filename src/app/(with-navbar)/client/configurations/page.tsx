@@ -11,9 +11,9 @@ const ConfigurationsPage = () => {
     return (
         <article className="flex items-center w-1/4 mx-auto my-52 px-16">
             <section className="w-full">
-                <span className="mt-8 text-4xl text-center font-extrabold tracking-tighter">
+                <h1 className="mt-8 text-4xl text-center font-extrabold tracking-tighter">
                     {t("configurations.title")}
-                </span>
+                </h1>
                 <section className="flex flex-col mx-auto my-4">
                     <input
                         type="text"
