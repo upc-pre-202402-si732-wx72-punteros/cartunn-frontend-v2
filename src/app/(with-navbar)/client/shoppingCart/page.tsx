@@ -18,11 +18,11 @@ const ShoppingCartPage = () => {
         setOrders(response);
     }
 
-    const price = localStorage.getItem("total price");
+    // const price = localStorage.getItem("total price");
 
     useEffect(() => {
         getData();
-        if (price) setTotalPrice(price.toString());
+        // if (price) setTotalPrice(price.toString());
     }, [orders]);
 
     return (
@@ -39,7 +39,8 @@ const ShoppingCartPage = () => {
                 </article>
                 <section className="flex flex-col w-1/6">
                     <span className="text-2xl font-extrabold tracking-tighter">{t("shopping-cart.order")}</span>
-                    <span className="my-2">{t("shopping-cart.total")}: ${totalPrice.replace(/[\[\]]/g, '')}.00</span>
+                    {/*<span className="my-2">{t("shopping-cart.total")}: ${totalPrice.replace(/[\[\]]/g, '')}.00</span>*/}
+                    <span className="my-2">{t("shopping-cart.total")}: --.--</span>
                     <button
                         className="c-button mt-2 py-3 font-semibold"
                         onClick={() => {
