@@ -26,7 +26,7 @@ const TunningTaskClientCard = (props: TunningTask) => {
                 <Image
                     src={deleteIcon}
                     alt="delete"
-                    width={25}
+                    width={24}
                     onClick={() => tunningTaskHandler(props.id)}
                 />
             </section>

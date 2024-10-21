@@ -37,6 +37,7 @@ const RefundStaffCard = (props: ProductRefund) => {
                 </h2>
                 <Image
                     src={removeItem}
+                    width={24}
                     alt="favorites"
                     onClick={notify}
                 />

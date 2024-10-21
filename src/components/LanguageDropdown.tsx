@@ -23,6 +23,7 @@ const LanguageDropdown = () => {
                 <section className="flex">
                     <Image
                         src={languages}
+                        width={24}
                         alt="languages"
                     />
                     <span className="ml-2">

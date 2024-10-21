@@ -64,6 +64,7 @@ const ProductClientCard = (props: Product) => {
                 <button onClick={favoriteProductHandler}>
                     <NextImage
                         src={isFavorite ? favoriteFilled : favorite}
+                        width={24}
                         alt="favorites"
                     />
                 </button>

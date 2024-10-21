@@ -60,6 +60,7 @@ const ShoppingClientCard = (props: ShoppingClientCardProps) => {
                 <h2 className="text-xl font-extrabold tracking-tighter">{t("shopping-cart.title-card")}: #{props.id}</h2>
                 <Image
                     src={removeItem}
+                    width={24}
                     alt="favorites"
                     onClick={notify}
                 />

@@ -43,7 +43,7 @@ const NotificationClientCard = (props: Notification) => {
                     <Image
                         src={deleteIcon}
                         alt="delete"
-                        width={25}
+                        width={24}
                         className="ml-2"
                         onClick={() => {notificationHandler(props.id)}}
                     />
