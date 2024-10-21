@@ -5,7 +5,7 @@ import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import toast, { Toaster } from "react-hot-toast";
 
-import removeItem from "@/assets/icons/trash.svg";
+import removeItem from "@/assets/icons/trash.png";
 
 import ProductRefund from "@/interfaces/ProductRefund";
 import deleteReturnById from "@/logic/deleteReturnById";

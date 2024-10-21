@@ -2,8 +2,8 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import toast, { Toaster } from "react-hot-toast";
 
-import information from "@/assets/images/information.svg";
-import deleteIcon from "@/assets/icons/trash.svg";
+import information from "@/assets/images/information.png";
+import deleteIcon from "@/assets/icons/trash.png";
 
 import deleteNotificationById from "@/logic/deleteNotificationById";
 import Notification from "@/interfaces/Notification";

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import toast, { Toaster } from "react-hot-toast";
 
-import removeItem from "@/assets/icons/trash.svg";
+import removeItem from "@/assets/icons/trash.png";
 
 import Product from "@/interfaces/Product";
 import getProductById from "@/logic/getProductById";

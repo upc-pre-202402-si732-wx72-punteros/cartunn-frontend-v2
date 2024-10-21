@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import EeuuFlag from "@/assets/images/eeuu-flag.webp";
 import MexicoFlag from "@/assets/images/mexico-flag.webp";
-import languages from "@/assets/icons/language-square.svg"
+import languages from "@/assets/icons/language-square.png"
 
 const LanguageDropdown = () => {
     const { i18n } = useTranslation("global");

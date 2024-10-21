@@ -6,7 +6,7 @@ import { Table, Thead, Tbody, Tr, Th, Td, TableContainer } from "@chakra-ui/reac
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import Image from "next/image";
 
-import deleteIcon from "@/assets/icons/trash.svg";
+import deleteIcon from "@/assets/icons/trash.png";
 
 import Order from "@/interfaces/Order";
 import getOrders from "@/logic/getOrders";
