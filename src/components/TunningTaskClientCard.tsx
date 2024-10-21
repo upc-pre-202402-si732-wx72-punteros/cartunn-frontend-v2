@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import toast, { Toaster } from "react-hot-toast";
 
-import deleteIcon from "@/assets/icons/trash.svg";
+import deleteIcon from "@/assets/icons/trash.png";
 import TunningTask from "@/interfaces/TunningTask";
 import deleteTunningTaskById from "@/logic/deleteTunningTaskById";
 

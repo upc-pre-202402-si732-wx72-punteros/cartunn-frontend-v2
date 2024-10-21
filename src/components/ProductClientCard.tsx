@@ -5,8 +5,8 @@ import { Image } from "@chakra-ui/react";
 import NextImage from "next/image";
 import toast, { Toaster } from "react-hot-toast";
 
-import favorite from "@/assets/icons/heart.svg";
-import favoriteFilled from "@/assets/icons/heart-filled.svg";
+import favorite from "@/assets/icons/heart.png";
+import favoriteFilled from "@/assets/icons/heart-filled.png";
 
 import Product from "@/interfaces/Product";
 import postFavoriteProduct from "@/logic/postFavoriteProduct";

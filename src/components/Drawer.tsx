@@ -6,19 +6,19 @@ import { useRef } from "react";
 import Link from "next/link";
 
 import LanguageDropdown from "@/components/LanguageDropdown";
-import userType from "@/assets/icons/frame.svg"
-import menuIcon from "@/assets/icons/menu-1.svg";
-import productList from "@/assets/icons/document-text.svg";
-import favorites from "@/assets/icons/heart.svg";
-import notifications from "@/assets/icons/notification.svg"
-import shoppingCart from "@/assets/icons/shopping-cart.svg";
-import uploadItem from "@/assets/icons/additem.svg";
-import updateItem from "@/assets/icons/arrange-square-2.svg";
-import removeItem from "@/assets/icons/trash.svg";
-import manageReturns from "@/assets/icons/receipt.svg";
-import settings from "@/assets/icons/setting-2.svg";
-import help from "@/assets/icons/message.svg";
-import logout from "@/assets/icons/logout-1.svg";
+import userType from "@/assets/icons/frame.png"
+import menuIcon from "@/assets/icons/menu-1.png";
+import productList from "@/assets/icons/document-text.png";
+import favorites from "@/assets/icons/heart.png";
+import notifications from "@/assets/icons/notification.png"
+import shoppingCart from "@/assets/icons/shopping-cart.png";
+import uploadItem from "@/assets/icons/additem.png";
+import updateItem from "@/assets/icons/arrange-square-2.png";
+import removeItem from "@/assets/icons/trash.png";
+import manageReturns from "@/assets/icons/receipt.png";
+import settings from "@/assets/icons/setting-2.png";
+import help from "@/assets/icons/message.png";
+import logout from "@/assets/icons/logout-1.png";
 
 type DrawerDashboardProps = {
     typeUser: string,

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import Image from "next/image";
-import arrowLeftIcon from "@/assets/icons/arrow-left-2.svg";
+import arrowLeftIcon from "@/assets/icons/arrow-left-2.png";
 
 type BackButtonProps = {
     route: string;
