@@ -12,7 +12,11 @@ const BackButton = (props: BackButtonProps) => {
 
     return (
         <Link href={props.route} className="flex">
-            <Image src={arrowLeftIcon} alt="arrow icon" className="mr-2" />
+            <Image
+                src={arrowLeftIcon}
+                width={24}
+                alt="arrow icon"
+                className="mr-2" />
             <span>{t("back-button")}</span>
         </Link>
     );

@@ -61,6 +61,7 @@ const FavoriteClientCard = (props: FavoriteClientCardProps) => {
                     <h2 className="text-xl font-extrabold tracking-tighter">{t("favorites.title-card")}: {favorites.id}</h2>
                     <NextImage
                         src={removeItem}
+                        width={24}
                         alt="favorites"
                         onClick={notify}
                     />

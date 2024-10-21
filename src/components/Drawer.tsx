@@ -35,6 +35,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                 <section className="flex items-end">
                     <Image
                         src={menuIcon}
+                        width={24}
                         alt="menu"
                         className="mb-1"
                         ref={btnRef}
@@ -48,6 +49,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                     <section className="flex mr-4">
                         <Image
                             src={userType}
+                            width={24}
                             alt="user type"
                         />
                         <span>
@@ -84,6 +86,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     >
                                         <Image
                                             src={productList}
+                                            width={24}
                                             alt="products list"
                                             className="mr-2"
                                         />
@@ -99,6 +102,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     >
                                         <Image
                                             src={favorites}
+                                            width={24}
                                             alt="favorites"
                                             className="mr-2"
                                         />
@@ -114,6 +118,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     >
                                         <Image
                                             src={notifications}
+                                            width={24}
                                             alt="notifications"
                                             className="mr-2"
                                         />
@@ -129,6 +134,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     >
                                         <Image
                                             src={manageReturns}
+                                            width={24}
                                             alt="reports"
                                             className="mr-2"
                                         />
@@ -144,6 +150,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     >
                                         <Image
                                             src={shoppingCart}
+                                            width={24}
                                             alt="shopping cart"
                                             className="mr-2"
                                         />
@@ -162,6 +169,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     >
                                         <Image
                                             src={settings}
+                                            width={24}
                                             alt="settings"
                                             className="mr-2"
                                         />
@@ -177,6 +185,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     >
                                         <Image
                                             src={help}
+                                            width={24}
                                             alt="help"
                                             className="mr-2"
                                         />
@@ -197,6 +206,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     >
                                         <Image
                                             src={productList}
+                                            width={24}
                                             alt="orders list"
                                             className="mr-2"
                                         />
@@ -212,6 +222,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     >
                                         <Image
                                             src={uploadItem}
+                                            width={24}
                                             alt="upload item"
                                             className="mr-2"
                                         />
@@ -227,6 +238,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     >
                                         <Image
                                             src={updateItem}
+                                            width={24}
                                             alt="update item"
                                             className="mr-2"
                                         />
@@ -242,6 +254,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     >
                                         <Image
                                             src={removeItem}
+                                            width={24}
                                             alt="remove item"
                                             className="mr-2"
                                         />
@@ -257,6 +270,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     >
                                         <Image
                                             src={manageReturns}
+                                            width={24}
                                             alt="manage returns"
                                             className="mr-2"
                                         />
@@ -273,6 +287,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     >
                                         <Image
                                             src={settings}
+                                            width={24}
                                             alt="settings"
                                             className="mr-2"
                                         />
@@ -288,6 +303,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     >
                                         <Image
                                             src={help}
+                                            width={24}
                                             alt="help"
                                             className="mr-2"
                                         />
@@ -311,6 +327,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                             >
                                 <Image
                                     src={logout}
+                                    width={24}
                                     alt="logout"
                                     className="mr-2"
                                 />
