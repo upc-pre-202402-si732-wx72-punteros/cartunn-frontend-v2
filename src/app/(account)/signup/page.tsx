@@ -42,7 +42,8 @@ const SignUp = () => {
     const handleSubmit = async () => {
         await signUpHandler();
         if (role === "2")
-            localStorage.setItem('user', JSON.stringify({ username: user.username, password: user.password, role: role }));
+            // localStorage.setItem('user', JSON.stringify({ username: user.username, password: user.password, role: role }));
+            localStorage.setItem('user', 'staff');
         router.push("/login");
     };
 

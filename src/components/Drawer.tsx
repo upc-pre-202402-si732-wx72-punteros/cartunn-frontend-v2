@@ -322,6 +322,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                 onClick={ () => {
                                     onToggle();
                                     localStorage.removeItem("token");
+                                    localStorage.removeItem("user");
                                 }}
                                 className="flex"
                             >
