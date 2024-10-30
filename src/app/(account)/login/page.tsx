@@ -22,9 +22,9 @@ const Login = () => {
 
     const loginHandler = () => {
         const storedUser = localStorage.getItem("user");
-        if (!storedUser) {
-            router.push("/client/home");
-        } else router.push("/staff/home");
+        console.log(storedUser)
+        if (!storedUser) router.push("/client/home");
+        if (storedUser === "staff") router.push("/staff/home");
     }
 
     const signInHandler = async () => {
